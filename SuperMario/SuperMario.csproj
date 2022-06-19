@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Block.cs" />
     <Compile Include="EndScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,6 +65,14 @@
     <Compile Include="GameScreen.Designer.cs">
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Goomba.cs" />
+    <Compile Include="InstructionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InstructionScreen.Designer.cs">
+      <DependentUpon>InstructionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mario.cs" />
     <Compile Include="MenuScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,6 +83,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameScreen.resx">
+      <DependentUpon>GameScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructionScreen.resx">
+      <DependentUpon>InstructionScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuScreen.resx">
       <DependentUpon>MenuScreen.cs</DependentUpon>
@@ -104,6 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Premium Vector _ Pixel art game background, grass, sky and clouds.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Running mario Gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mario_coin_block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goomba %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mario block.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

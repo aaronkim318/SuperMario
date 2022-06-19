@@ -63,9 +63,49 @@ namespace SuperMario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap goomba {
+            get {
+                object obj = ResourceManager.GetObject("goomba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mario_block {
+            get {
+                object obj = ResourceManager.GetObject("mario_block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mario_coin_block {
+            get {
+                object obj = ResourceManager.GetObject("mario_coin_block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Premium_Vector___Pixel_art_game_background__grass__sky_and_clouds {
             get {
                 object obj = ResourceManager.GetObject("Premium Vector _ Pixel art game background, grass, sky and clouds", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Running_mario_Gif {
+            get {
+                object obj = ResourceManager.GetObject("Running_mario_Gif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
