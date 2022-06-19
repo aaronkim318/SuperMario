@@ -36,7 +36,7 @@
             // titleLabel
             // 
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("Super Mario 256", 25F, System.Drawing.FontStyle.Bold);
+            this.titleLabel.Font = new System.Drawing.Font("Super Mario 256", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Black;
             this.titleLabel.Location = new System.Drawing.Point(164, 80);
             this.titleLabel.Name = "titleLabel";
@@ -61,7 +61,7 @@
             // 
             this.exitButton.BackColor = System.Drawing.Color.LightSkyBlue;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Super Mario 256", 16F, System.Drawing.FontStyle.Bold);
+            this.exitButton.Font = new System.Drawing.Font("Super Mario 256", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.Location = new System.Drawing.Point(311, 207);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(148, 66);

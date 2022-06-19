@@ -42,20 +42,22 @@ namespace SuperMario
         int goombaRandValue;
         Random rand = new Random();
 
-        Size screenSize;
+        int lifeCounter = 3;
+
         #endregion
 
         public GameScreen()
         {
             InitializeComponent();
             OnStart();
-
+            lifeCounterLabel.Text = "";
+            lifeCounterLabel.Text = $"{lifeCounter}";
         }
 
         public void OnStart()
         {
 
-            mario = new Mario(30, this.Height - groundHeight - 95, 100);
+            mario = new Mario(60, this.Height - groundHeight - 95, 100);
         }
         private void GameScreen_KeyDown(object sender, KeyEventArgs e)
         {
@@ -70,8 +72,7 @@ namespace SuperMario
                         jumpOk = false;
                     }
                     break;
-
-                case Keys.Escape:
+                case Keys.Enter:
                     if (gameTicker.Enabled)
                     {
                         gameTicker.Enabled = false;
@@ -81,6 +82,7 @@ namespace SuperMario
                         gameTicker.Enabled = true;
                     }
                     break;
+
 
 
             }
@@ -159,7 +161,7 @@ namespace SuperMario
             else if (blockRandValue < 8)
             {
                 int x = 15;
-                int y = 174;
+                int y = 275;
                 int height = 30;
                 int length = 60;
                 blocks.Add(new Block(this.Width - x, y, height, length));
@@ -202,15 +204,43 @@ namespace SuperMario
 
             foreach (Block b in blocks)
             {
-                Rectangle blockRec = new Rectangle(b.x, b.y, b.length, b.height);
-
-
-
-                if (marioRec.IntersectsWith(blockRec))
+                Rectangle sideBlockRec = new Rectangle(b.x, b.y, b.length - 50, b.height - 5);
+                //if mario collides with the left side of the block, push mario back
+                if (marioRec.IntersectsWith(sideBlockRec))
                 {
                     //if they have collided, push mario back.
+                    mario.x = b.x - b.length;
+                }
+                else if (mario.x < 1)
+                { 
+                    lifeCounterLabel.Text = "";
+                    lifeCounter = lifeCounter - 1;
+                    lifeCounterLabel.Text = $"{lifeCounter}";
+                    mario.x = 60;
+                    mario.y = this.Height - groundHeight - 95;
+                    gameTicker.Enabled = false;
+                    blocks.Remove(b);
 
+                    foreach (Goomba g in goombaList)
+                    {
+                        goombaList.Remove(g);
+                        break;
+                    }
+                    break;
+                }
+            }
+            //if mario collides with the top of the block, have mario on top of the block
+            foreach (Block b in blocks)
+            {
+                Rectangle topBlockRec = new Rectangle(b.x, b.y, b.length, b.height - 20);
 
+                if (marioRec.IntersectsWith(topBlockRec))
+                {
+                    mario.y = b.y - b.height;
+                }
+                else
+                {
+                    mario.y = this.Height - groundHeight - 95;
                 }
             }
 
