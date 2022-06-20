@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.gameTicker = new System.Windows.Forms.Timer(this.components);
             this.lifeCounterLabel = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTicker
@@ -42,17 +43,29 @@
             // lifeCounterLabel
             // 
             this.lifeCounterLabel.AutoSize = true;
+            this.lifeCounterLabel.Font = new System.Drawing.Font("Super Mario 256", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lifeCounterLabel.Location = new System.Drawing.Point(24, 23);
             this.lifeCounterLabel.Name = "lifeCounterLabel";
-            this.lifeCounterLabel.Size = new System.Drawing.Size(35, 13);
+            this.lifeCounterLabel.Size = new System.Drawing.Size(69, 16);
             this.lifeCounterLabel.TabIndex = 0;
             this.lifeCounterLabel.Text = "label1";
+            // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Font = new System.Drawing.Font("Super Mario 256", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.Location = new System.Drawing.Point(479, 23);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(69, 16);
+            this.scoreLabel.TabIndex = 1;
+            this.scoreLabel.Text = "label1";
             // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.HotPink;
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.lifeCounterLabel);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
@@ -69,5 +82,6 @@
 
         private System.Windows.Forms.Timer gameTicker;
         private System.Windows.Forms.Label lifeCounterLabel;
+        private System.Windows.Forms.Label scoreLabel;
     }
 }

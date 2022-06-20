@@ -38,7 +38,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
-            this.Text = "Super Fartio";
+            this.Text = "7";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

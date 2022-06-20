@@ -45,6 +45,8 @@ namespace SuperMario
 
         int lifeCounter = 3;
 
+        int scoreCount;
+
         #endregion
 
         public GameScreen()
@@ -52,7 +54,9 @@ namespace SuperMario
             InitializeComponent();
             OnStart();
             lifeCounterLabel.Text = "";
-            lifeCounterLabel.Text = $"{lifeCounter}";
+            scoreLabel.Text = "";
+            lifeCounterLabel.Text = $"Lives:{lifeCounter}";
+
         }
 
         public void OnStart()
@@ -139,6 +143,9 @@ namespace SuperMario
 
         private void gameTicker_Tick(object sender, EventArgs e)
         {
+            scoreCount++;
+
+            scoreLabel.Text = $"Score:{scoreCount}";
             //move the balls
             foreach (Block b in blocks)
             {
@@ -203,46 +210,75 @@ namespace SuperMario
             //checks for collison between mario and a block
             Rectangle marioRec = new Rectangle(mario.x, mario.y, mario.size, mario.size);
 
-            foreach (Block b in blocks)
-            {
-                Rectangle sideBlockRec = new Rectangle(b.x, b.y, b.length - 50, b.height - 5);
-                //if mario collides with the left side of the block, push mario back
-                if (marioRec.IntersectsWith(sideBlockRec))
-                {
-                    //if they have collided, push mario back.
-                    mario.x = b.x - b.length;
-                }
-                else if (mario.x < 1)
-                { 
-                    lifeCounterLabel.Text = "";
-                    lifeCounter = lifeCounter - 1;
-                    lifeCounterLabel.Text = $"{lifeCounter}";
-                    mario.x = 60;
-                    mario.y = this.Height - groundHeight - 95;
-                    gameTicker.Enabled = false;
-                    blocks.Remove(b);
+            //foreach (Block b in blocks)
+            //{
+            //    Rectangle sideBlockRec = new Rectangle(b.x, b.y, b.length - 50, b.height - 5);
+            //    //if mario collides with the left side of the block, push mario back
+            //    if (marioRec.IntersectsWith(sideBlockRec))
+            //    {
+            //        //if they have collided, push mario back.
+            //        mario.x = b.x - b.length;
+            //    }
+            //    else if (mario.x < 1)
+            //    {
+            //        lifeCounterLabel.Text = "";
+            //        lifeCounter = lifeCounter - 1;
+            //        lifeCounterLabel.Text = $"{lifeCounter}";
+            //        mario.x = 60;
+            //        mario.y = this.Height - groundHeight - 95;
+            //        gameTicker.Enabled = false;
+            //        blocks.Remove(b);
 
-                    foreach (Goomba g in goombaList)
+            //        foreach (Goomba g in goombaList)
+            //        {
+            //            goombaList.Remove(g);
+            //            break;
+            //        }
+            //        break;
+            //    }
+            //}
+            ////if mario collides with the top of the block, have mario on top of the block
+            //foreach (Block b in blocks)
+            //{
+            //    Rectangle topBlockRec = new Rectangle(b.x, b.y, b.length, b.height - 20);
+
+            //    if (marioRec.IntersectsWith(topBlockRec))
+            //    {
+            //        mario.y = b.y - b.height;
+            //    }
+            //    else
+            //    {
+            //        mario.y = this.Height - groundHeight - 95;
+            //    }
+            //}
+            //if mario collides with the front of the goomba, lose a life and start new round
+            foreach (Goomba g in goombaList)
+            {
+                Rectangle sideGoombaRec = new Rectangle(g.x, g.y, g.size - 30, g.size - 10);
+                if (marioRec.IntersectsWith(sideGoombaRec))
+                {
+                    lifeCounterLabel.Text = "";
+                    goombaList.Remove(g);
+                    foreach (Block b in blocks)
                     {
-                        goombaList.Remove(g);
+                        blocks.Remove(b);
                         break;
                     }
-                    break;
+                    lifeCounter--;
+                    lifeCounterLabel.Text = $"Lives:{lifeCounter}";
+                    gameTicker.Enabled = false;
                 }
+                break;
             }
-            //if mario collides with the top of the block, have mario on top of the block
-            foreach (Block b in blocks)
+            foreach (Goomba g in goombaList)
             {
-                Rectangle topBlockRec = new Rectangle(b.x, b.y, b.length, b.height - 20);
-
-                if (marioRec.IntersectsWith(topBlockRec))
+                Rectangle topGoombaRec = new Rectangle(g.x, g.y, g.size, g.size);
+                if (marioRec.IntersectsWith(topGoombaRec))
                 {
-                    mario.y = b.y - b.height;
+                    goombaList.Remove(g);
+                    scoreCount += 100;
                 }
-                else
-                {
-                    mario.y = this.Height - groundHeight - 95;
-                }
+                break;
             }
 
             Refresh();
