@@ -15,14 +15,8 @@ namespace SuperMario
             x = _x;
             y = _y;
             size = _size;
-         
-        }
-        //public void Move(Size ss)
-        //{
-        //    x -= xSpeed;
-        //}
-        
 
+        }
         
     }
 }

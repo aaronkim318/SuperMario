@@ -140,5 +140,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\walkingmario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\bin\Debug\HighScore.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

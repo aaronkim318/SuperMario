@@ -31,6 +31,8 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.highScoreLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -70,12 +72,36 @@
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // highScoreLabel
+            // 
+            this.highScoreLabel.AutoSize = true;
+            this.highScoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.highScoreLabel.Font = new System.Drawing.Font("Super Mario 256", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highScoreLabel.Location = new System.Drawing.Point(106, 36);
+            this.highScoreLabel.Name = "highScoreLabel";
+            this.highScoreLabel.Size = new System.Drawing.Size(69, 16);
+            this.highScoreLabel.TabIndex = 5;
+            this.highScoreLabel.Text = "label1";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nameLabel.Font = new System.Drawing.Font("Super Mario 256", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(18, 36);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(69, 16);
+            this.nameLabel.TabIndex = 5;
+            this.nameLabel.Text = "label1";
+            // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::SuperMario.Properties.Resources.Premium_Vector___Pixel_art_game_background__grass__sky_and_clouds;
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.highScoreLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.titleLabel);
@@ -83,6 +109,7 @@
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(600, 375);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -90,5 +117,7 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label highScoreLabel;
+        private System.Windows.Forms.Label nameLabel;
     }
 }

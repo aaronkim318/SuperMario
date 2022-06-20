@@ -9,14 +9,15 @@ namespace SuperMario
 {
     internal class Mario
     {
-        public int x, y, size;
-        
+        public int x, y;
+        public int height = 50;
+        public int width = 40;
 
-        public Mario(int _x, int _y, int _size)
+        public Mario(int _x, int _y)
         {
             x = _x;
             y = _y;
-            size = _size;
+           
         }
     }
 }

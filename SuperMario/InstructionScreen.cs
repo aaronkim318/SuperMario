@@ -31,9 +31,13 @@ namespace SuperMario
             label1.Visible = false;
             label2.Visible = false;
             label3.Visible = false;
+            label4.Visible = false;
 
             backButton.Visible = false;
             startButton.Visible = false;
+
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
         }
 
         private void startButton_Click(object sender, EventArgs e)

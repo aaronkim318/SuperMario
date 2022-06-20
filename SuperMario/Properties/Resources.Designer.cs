@@ -71,12 +71,26 @@ namespace SuperMario.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt; 
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;Player&gt;
+        ///	&lt;Name&gt;&lt;/Name&gt;
+        ///	&lt;Highscore&gt;&lt;/Highscore&gt;
+        ///&lt;/Player&gt;
         ///.
         /// </summary>
         internal static string HighScore {
             get {
                 return ResourceManager.GetString("HighScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mario {
+            get {
+                object obj = ResourceManager.GetObject("mario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -106,16 +120,6 @@ namespace SuperMario.Properties {
         internal static System.Drawing.Bitmap Premium_Vector___Pixel_art_game_background__grass__sky_and_clouds {
             get {
                 object obj = ResourceManager.GetObject("Premium Vector _ Pixel art game background, grass, sky and clouds", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Running_mario_Gif {
-            get {
-                object obj = ResourceManager.GetObject("Running_mario_Gif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

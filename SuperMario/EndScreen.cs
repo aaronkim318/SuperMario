@@ -24,8 +24,9 @@ namespace SuperMario
             writer.WriteStartElement("Player");
 
 
-            writer.WriteElementString("Name",  );
+            writer.WriteElementString("Name", inputText.Text);
 
+            writer.WriteElementString("HighScore", Convert.ToString(GameScreen.scoreCount));
 
             writer.WriteEndElement();
             writer.Close();
