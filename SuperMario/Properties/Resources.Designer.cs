@@ -61,6 +61,24 @@ namespace SuperMario.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ding {
+            get {
+                return ResourceManager.GetStream("ding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream game_over {
+            get {
+                return ResourceManager.GetStream("game over", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap goomba {
@@ -73,10 +91,10 @@ namespace SuperMario.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Player&gt;
-        ///	&lt;Name&gt;&lt;/Name&gt;
-        ///	&lt;Highscore&gt;&lt;/Highscore&gt;
-        ///&lt;/Player&gt;
-        ///.
+        ///&lt;Name&gt;
+        ///	&lt;Highscore&gt;&lt;/Highscore&gt;	
+        ///&lt;/Name&gt;
+        ///&lt;/Player&gt;.
         /// </summary>
         internal static string HighScore {
             get {
@@ -110,6 +128,25 @@ namespace SuperMario.Properties {
         internal static System.Drawing.Bitmap mario_coin_block {
             get {
                 object obj = ResourceManager.GetObject("mario_coin_block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream mario_jump {
+            get {
+                return ResourceManager.GetStream("mario jump", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mi {
+            get {
+                object obj = ResourceManager.GetObject("mi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

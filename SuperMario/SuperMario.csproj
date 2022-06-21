@@ -136,18 +136,22 @@
     <None Include="Resources\mario block.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\HighScore.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\mario.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\walkingmario.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\bin\Debug\HighScore.xml" />
+    <None Include="Resources\mi.jpg" />
+    <None Include="Resources\Ding - Sound Effect %28HD%29.wav" />
+    <None Include="Resources\[MP3DOWNLOAD.TO] Super Mario Bros. - Game Over Sound Effect-192k.wav" />
+    <None Include="Resources\[MP3DOWNLOAD.TO] Mario Jump - Gaming Sound Effect %28HD%29-256k.wav" />
+    <Content Include="HighScore.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

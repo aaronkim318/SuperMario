@@ -18,7 +18,7 @@ namespace SuperMario
             InitializeComponent();
             highScoreLabel.Text = "";
             nameLabel.Text = "";
-            loadDB();
+
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -41,25 +41,5 @@ namespace SuperMario
             Application.Exit();
         }
 
-        public void loadDB()
-        {
-            XmlReader reader = XmlReader.Create("Resources/HighScore.xml", null);
-
-            while (reader.Read())
-            {
-                if (reader.NodeType == XmlNodeType.Text)
-                { 
-               
-                    string name = reader.ReadString();
-
-                    reader.ReadToNextSibling("HighScore");
-                    string highscore = reader.ReadString();
-
-                    highScoreLabel.Text = $"{highscore}";
-                    nameLabel.Text = $"{name}:";
-   
-                }
-            }
-        }
     }
 }
